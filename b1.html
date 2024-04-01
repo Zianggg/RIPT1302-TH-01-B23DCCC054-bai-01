@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+    <style>
+        .clock {
+            background-color: tomato;
+            color: wheat;
+            border: 3px solid black;
+            margin: 100px 200px;
+            padding: 25px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .clock span{
+            font-size: 50px;
+            width: 20px;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            margin: 10px 10px;
+
+        }
+        .title{
+            font-size: 30px;
+        }
+        #hrs {
+            background-color: rgb(138, 39, 39);
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;}
+            #min {
+            background-color: rgb(138, 39, 39);
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+}
+#sec {
+            background-color: rgb(138, 39, 39);
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="title">
+            THỜI GIAN BÂY GIỜ LÀ:
+        </div>
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+    </div>
+
+<script>
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    setInterval(()=>{
+        let currenttime = new Date();
+        hrs.innerHTML = (currenttime.getHours()<10?"0":"")+ currenttime.getHours();
+        min.innerHTML = (currenttime.getMinutes()<10?"0":"")+ currenttime.getMinutes();
+        sec.innerHTML = (currenttime.getSeconds()<10?"0":"")+ currenttime.getSeconds();
+    },1000)
+
+
+</script>
+
+
+</body>
+</html>
